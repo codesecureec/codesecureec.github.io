@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<header class="row">
+    <div class="col-md-4">
+        <img src="{% static 'recursos/angel_jimenez.png' %}" alt="foto de Angel Jiménez" class="img-fluid">
+    </div>
+    <div class="col-md-8">
+        <h1>Angel David Jiménez Garzón</h1>
+        <h2>Service desk, desarrollador web, y experto en proteger la información y los sistemas de organizaciones contra amenazas digitales.</h2>
+        <p>Angel David Jiménez Garzón es un profesional de la informática con amplia experiencia en el campo de la ciberseguridad. Se ha desempeñado como service desk, brindando soporte técnico y asistencia a los usuarios de sistemas informáticos y redes. También tiene conocimientos de desarrollo web, utilizando diversos lenguajes de programación y herramientas para crear sitios web funcionales y atractivos. Su principal fortaleza es su capacidad para proteger la información y los sistemas de organizaciones contra amenazas digitales, aplicando medidas de seguridad, prevención y respuesta ante posibles ataques cibernéticos.</p>
+        <a class="btn btn-primary btn=lg rounded-0 my-3" href="{% static 'recursos/cv_ANGEL_JIMENEZ_2023.pdf' %}" target="_blank">Descargar CV</a>
+    </div>
+</header>
+
+<div class="row my-4 text-center">
+
+    <h2 class="my-5">Proyectos de desarrollo web</h2>
+
+    {% for project in projects %}
+    <div class="col-md-4">
+        <div class="card card-project">
+            <img src="{{ project.image.url }}" alt="{{project.title}}" class="card-img-top">
+            <h2> <a href="{{ project.url }}" class="btn btn-success" target= _blank> {{ project.title }} </a></h2>
+            <p> {{ project.description }} </p>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
+
+</div>

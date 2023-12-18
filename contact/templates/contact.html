@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="row">
+  <div class="col-12 col-md-6 offset-md-3 p-4">
+    <div class="card card-body">
+      <h3>¿Te interesa algun servicio?</h3>
+      <br>
+      <form action="" method="post">
+        {% csrf_token %}
+      
+        {{ form|crispy }}
+      
+        <div class="d-flex justify-content-end">
+          <button type="reset" class="btn btn-danger">Cancelar</button>
+          &nbsp;
+          <button type="submit" class="btn btn-success">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  {{ mensaje }}
+</div>
+
+{% endblock %}
