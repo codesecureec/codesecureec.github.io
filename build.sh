@@ -7,3 +7,9 @@ pip install -r requirements.txt
 
 python manage.py collectstatic --no-input
 python manage.py migrate
+
+python manage.py createsuperuser
+deics
+Nino2023*
+ajimenez@computerserviceec.net
+
